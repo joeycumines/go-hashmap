@@ -86,6 +86,9 @@ type Map interface {
 	// is not guaranteed to return a map of the same size, and is dependant on the key implementation - if the keys
 	// all implement fmt.Stringer, and return correctly serialized values, this will work correctly.
 	Serialize() map[string]interface{}
+
+	// Get a new Iterator for this map, which should be stable.
+	Iterator() Iterator
 }
 ```
 
